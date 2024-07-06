@@ -1,0 +1,146 @@
+* {
+    font-family: Google Sans,Roboto,Helvetica,Arial,sans-serif;
+    color: whitesmoke;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+body {
+    background-image: linear-gradient(#a31616, #200d6b);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin-bottom: 0px;
+}
+
+h5 {
+    margin-top: 0px;
+}
+
+.music-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#music-control {
+    width: 400px;
+}
+
+
+.playlist-name {
+    margin-top: 10px;
+    color: #8B999C;
+    display: flex;
+    justify-content: center;
+}
+
+.capa-musica {
+    width: 400px;
+    height: 400px;
+    margin: 20px 0px;
+}
+
+.music-info {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.music-name {
+    margin: 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.painel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.play {
+    width: 70px;
+    height: 70px;
+}
+
+.backward,
+.forward {
+    width: 40px;
+    height: 40px;
+}
+
+.embaralha,
+.loop,
+.favorito {
+    width: 20px;
+    height: 20px; 
+}
+
+.favorito {
+    fill:#8B999C;
+}
+
+.play:hover,
+.backward:hover,
+.forward:hover,
+.embaralha:hover,
+.loop:hover,
+.favorito:hover {
+    cursor: pointer;
+}
+
+#nome-banda {
+    color: #8B999C;
+}
+
+#progress-bar {
+    background: #8B999C;
+    height: 3px;
+    border-radius: 15px;
+}
+#current-progress {
+    --progress: 0%;
+    background: whitesmoke;
+    height: inherit;
+    width: var(--progress);
+    border-radius: inherit;
+}
+
+#progress-container {
+    margin: 0px;
+}
+
+#progress-container:hover {
+    cursor: pointer;
+}
+
+.activate {
+    fill: rgb(0, 183, 107); 
+}
+
+#time {
+    font-size: smaller;
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#song-time,
+#total-time {
+    color: #8B999C;
+}
+

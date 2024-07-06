@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/style/style.css' %}">
+    
+</head>
+<body>
+    <div class="music-container">
+        <h4 class="playlist-name">Playlist</h4>
+
+        <div>
+            <img src="https://i.gifer.com/ZKZg.gif"
+                alt="capa musica"
+                class="capa-musica"
+                id="capa-musica">
+            <audio src="n" id="musica" ontimeupdate="updateProgressBar()"></audio>
+                
+        </div>
+        <div id="music-control">
+            <div class="music-info">
+                <div class="music-name">
+                    <h2 id="nome-musica">Nome da musica</h2>
+                    <h5 id="nome-banda">Nome da Banda</h5>
+                </div>
+                <svg class="favorito"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                    onclick="likeSong()">
+                    <path id="like-icon" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                </svg>
+            </div>
+            <div id="progress-container">
+                <div id="progress-bar">
+                    <div id="current-progress"></div>
+                </div>
+                <div id="time">
+                    <div id="song-time">00:00</div>
+                    <div id="total-time">00:00</div>
+                </div>
+            </div>
+
+            <div class="painel">
+                <svg class="embaralha"
+                    id="embaralha"
+                    fill="currentColor"  
+                    viewBox="0 0 16 16"
+                    onclick="embaralharPlaylist()">
+                    <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"/>
+                    <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"/>
+                </svg>
+                <svg class="backward"
+                    fill="currentColor" 
+                    viewBox="0 0 16 16"
+                    onclick="previousSong()">
+                    <path d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5"/>
+                </svg>
+                <svg class="play"
+                    fill="currentColor" 
+                    viewBox="0 0 16 16"
+                    onclick="play_pause()">
+                    <path id='play-icon' d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+                </svg>
+                <svg class="forward"
+                    fill="currentColor"  
+                    viewBox="0 0 16 16"
+                    onclick="nextSong()">
+                    <path d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5"/>
+                </svg>
+                <svg class="loop"
+                    id="repetir"
+                    fill="currentColor" 
+                    viewBox="0 0 16 16"
+                    onclick="musicLoop()">
+                    <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"/>
+                </svg>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static '/main/main.js' %}"></script>
+</body>
+</html>

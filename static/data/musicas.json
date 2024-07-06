@@ -1,0 +1,44 @@
+[
+    {
+        "Nome":"Biscuit",
+        "Banda":"Lukrembo",
+        "DirCapa":"static/imgs/biscuit.webp",
+        "DirMusica":"static/songs/Biscuit.mp3",
+        "Liked":false
+    },
+    {
+        "Nome":"Honey Jam",
+        "Banda":"MassoBeats",
+        "DirCapa":"static/imgs/honey_jam.webp",
+        "DirMusica":"static/songs/honey_jam.mp3",
+        "Liked":false
+    },
+    {
+        "Nome":"Vibing",
+        "Banda":"Pufino",
+        "DirCapa":"static/imgs/vibing.Webp",
+        "DirMusica":"static/songs/Vibing.mp3",
+        "Liked":false
+    },
+    {
+        "Nome":"Marshmallow",
+        "Banda":"Lukrembo",
+        "DirCapa":"static/imgs/marshmallow.Webp",
+        "DirMusica":"static/songs/Marshmallow.mp3",
+        "Liked":false
+    },
+    {
+        "Nome":"Rose Water",
+        "Banda":"MassoBeats",
+        "DirCapa":"static/imgs/rose_water.Webp",
+        "DirMusica":"static/songs/rose_water.mp3",
+        "Liked":false
+    },
+    {
+        "Nome":"Feeling Good",
+        "Banda":"Pufino",
+        "DirCapa":"static/imgs/feeling_good.Webp",
+        "DirMusica":"static/songs/Feeling_Good.mp3",
+        "Liked":false
+    }
+]
